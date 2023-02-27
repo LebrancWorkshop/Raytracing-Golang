@@ -4,17 +4,11 @@ import (
 	"go-raytracing/draw"
 	"go-raytracing/file"
 	"go-raytracing/template"
-)
-
-const (
-	FORMAT = "P3"
-	COLUMNS = 3
-	ROWS = 2
-	MAX_COLOR = 255
+	"go-raytracing/config"
 )
 
 func main() {
-	template := template.PPM("P3", 3, 2, 255)
+	template := template.PPM(config.FORMAT, config.COLUMNS, config.ROWS, config.MAX_COLOR)
 	header := template.Starter()
 	content := draw.Draw()
 	image := header + "\n" + content
