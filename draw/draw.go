@@ -1,5 +1,21 @@
 package draw
 
+import (
+	"go-raytracing/config"
+	"strconv"
+)
+
 func Draw() string {
-	return "255 0 0\n" + "0 255 0\n" + "0 0 255\n" + "255 255 0\n" + "0 255 255\n" + "255 0 255\n"
+	width := config.COLUMNS
+	height := config.ROWS
+
+	canvas := ""
+
+	for i := 0; i < width; i++ {
+		for j := 0; j < height; j++ {
+			canvas += strconv.Itoa(i) + " " + strconv.Itoa(j) + " " + strconv.Itoa(0) + "\n"
+		}
+	}
+
+	return canvas
 }

@@ -1,7 +1,6 @@
 package template
 
 import (
-	"go-raytracing/draw"
 	"strconv"
 )
 
@@ -30,8 +29,4 @@ func (t *Template) Starter() string {
 	maxcolorFormat := strconv.Itoa(t.MaxColor)
 	header := t.Format + "\n" + widthFormat + " " + heightFormat + "\n" + maxcolorFormat + "\n"
 	return header
-}
-
-func (t *Template) Pixel() string {
-	return draw.Draw()
 }
